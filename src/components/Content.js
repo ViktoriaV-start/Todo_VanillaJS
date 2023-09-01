@@ -94,6 +94,7 @@ export class Content {
     this.todos.splice(this.todos.indexOf(todo), 1);
     this._setTodos();
     this._checkColor();
+    console.log('Todo was deleted');
   }
 
   _updateTodoComplete(ev) {
