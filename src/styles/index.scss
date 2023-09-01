@@ -1,0 +1,20 @@
+$text-color: #31494f;
+$special-color: #4a7989;
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #E8FFF9;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+@import "norm";
+@import "header";
+@import "content";
+@import "form";
+@import "control";

@@ -1,0 +1,59 @@
+.content {
+  margin: 3rem auto 0;
+  padding: 0 100px 5rem 100px;
+  
+  &__text, &__text_gr {
+    font-size: 1.4rem;
+    width: 780px;
+    font-family: 'Roboto', sans-serif;
+    color: $text-color;
+    font-weight: 600;
+    padding: 1rem 0 1rem 1rem;
+    background-color: #ffffff;
+    outline: none;
+  }
+
+  &__checkbox {
+    width: 3.5rem;
+    height: 3.5rem;
+    outline-color: rgb(218, 217, 217);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &__item:hover {
+    box-shadow: 8px 9px 9px 0px rgba(0, 0, 0, 0.16);
+  }
+
+  &__btn {
+    background-color: #fcad96;
+    border-color: #fcad96;
+    color: #ffffff;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2.3rem;
+  }
+
+  &__btn:hover {
+    border-color: #fd7d58;
+    background-color: #fd7d58;
+  }
+}
+
+.bggray {
+    //background-color: #dce9ee;
+    font-weight: 300;
+}
+
+.line {
+  text-decoration-line: line-through;
+}
+
+.colored {
+  background-color: #00ffff !important;
+}
