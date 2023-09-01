@@ -1,6 +1,6 @@
 import {
   CONTENT_FORM_CLASS_NAME,
-  CONTENT_SELECTOR,
+  CONTENT_SELECTOR, CONTROL_BTNS_SELECTOR,
   INITIAL_TODO_ARRAY, TEXT_SELECTOR,
   TODO_SELECTOR
 } from "@/config/constants";
@@ -62,6 +62,13 @@ export class Content {
   _renderBottom(todo) {
     if(!todo.rendered) {
       this.contentContainer.insertAdjacentHTML('beforeend', todo.markUp(this.todos.indexOf(todo)));
+    }
+  }
+
+  /* Рендер заметки в начале списка заметок */
+  _renderTop(todo) {
+    if(!todo.rendered) {
+      document.querySelector(CONTROL_BTNS_SELECTOR).insertAdjacentHTML('afterend', todo.markUp(todo));
     }
   }
 
@@ -178,8 +185,9 @@ export class Content {
       todoText: text,
       completed: false
     });
-    this._handleData([newTodo]);
+    this.todos.unshift(newTodo);
     this._setTodos();
+    this._renderTop(newTodo);
   }
 
   _getMaxId() {

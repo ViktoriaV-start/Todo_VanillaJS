@@ -32,5 +32,6 @@ export const CONTENT_SELECTOR        = '.content';
 export const TODO_SELECTOR           = '.content__item';
 export const TEXT_SELECTOR           = '.content__text';
 export const FORM_SELECTOR           = '.form__wrap';
+export const CONTROL_BTNS_SELECTOR           = '.control';
 export const CONTENT_FORM_CLASS_NAME = 'content__form';
 export const FORM_CLASS_NAME         = 'form';
