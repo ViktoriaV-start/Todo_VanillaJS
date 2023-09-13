@@ -102,13 +102,18 @@ export class Content {
     const todo = this._getOneTodo(id);
     todo.completeTodo();
 
+    this.todos = this.todos.filter(elem => elem.id !== todo.id);
+    this._removeMarkUp(id);
+    todo.rendered = false;
+
     if(todo.completed) {
-      this.todos = this.todos.filter(elem => elem.id !== todo.id);
       this.todos.push(todo);
-      this._setTodos();
-      this._removeMarkUp(id);
       this._renderBottom(todo);
+    } else {
+      this.todos.unshift(todo);
+      this._renderTop(todo);
     }
+    this._setTodos();
     this._checkColor();
   }
 
