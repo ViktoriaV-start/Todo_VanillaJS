@@ -2,7 +2,8 @@ import {
   CONTENT_FORM_CLASS_NAME,
   CONTENT_SELECTOR, CONTROL_BTNS_SELECTOR,
   INITIAL_TODO_ARRAY, TEXT_SELECTOR,
-  TODO_SELECTOR
+  TODO_SELECTOR,
+  STORAGE_KEY
 } from "@/config/constants";
 import { Todo } from "@models/Todo";
 import { controlButtons } from "@/components/controlButtons";
@@ -27,11 +28,11 @@ export class Content {
 
 /* Получить данные из localStorage, распарсить и передать дальше. Если хранилище пустое - поместить начальный вариант */
   _getTodos() {
-    let data = localStorage.getItem('todos');
+    let data = localStorage.getItem(STORAGE_KEY);
 
     if (!data) {
-      localStorage.setItem('todos', JSON.stringify(INITIAL_TODO_ARRAY));
-      data = localStorage.getItem('todos');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_TODO_ARRAY));
+      data = localStorage.getItem(STORAGE_KEY);
     }
 
     this._handleData(JSON.parse(data));
@@ -84,7 +85,7 @@ export class Content {
 
 /* Set updated todos list to localStorage */
   _setTodos() {
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
   }
 
   _deleteTodo(ev) {

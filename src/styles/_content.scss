@@ -14,9 +14,19 @@
   }
 
   &__checkbox {
-    width: 3.5rem;
-    height: 3.5rem;
-    outline-color: rgb(218, 217, 217);
+    display: none;
+  }
+
+  &__checkbox:checked + .fake-chb::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: $special-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__item {
@@ -46,7 +56,6 @@
 }
 
 .bggray {
-    //background-color: #dce9ee;
     font-weight: 300;
 }
 
@@ -56,4 +65,12 @@
 
 .colored {
   background-color: #00ffff !important;
+}
+
+.fake-chb {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid $special-color;
+  position: relative;
+  margin: 0 5px;
 }

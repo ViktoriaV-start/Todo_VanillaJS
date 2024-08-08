@@ -58,12 +58,15 @@ export class Todo {
       <div class="${this.completed ? "content__item bggray" : "content__item"}"
            data-id="${this.id}"
       >
-        <input type="checkbox"
-               data-id="${this.id}"
-               class="content__checkbox"
-               ${this.completed ? 'checked' : '' }
-               
-        >
+        <label class="content__label">
+          <input type="checkbox"
+                 data-id="${this.id}"
+                 class="content__checkbox"
+                 ${this.completed ? 'checked' : '' }
+                 >
+          <div class="fake-chb"></div>
+        </label>       
+        
         <form class="content__form" type="submit" data-id="${this.id}">
         <input
                class="${this.completed ? "content__text bggray line" : "content__text"}"
